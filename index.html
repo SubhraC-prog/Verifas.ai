@@ -1,1 +1,443 @@
-Entry point
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="H-ESDM+ — Enterprise HEOR Evidence Synthesis, Deep Learning ETL, and Decision Modeling Engine" />
+  <meta name="theme-color" content="#0d0d14" />
+  <title>H-ESDM+ | Enterprise HEOR Evidence Synthesis Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+</head>
+<body>
+  <div id="app">
+    <!-- Ambient background -->
+    <div class="ambient-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <div class="logo-group">
+          <div class="logo-mark" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+              <path d="M8 22L16 10L24 22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 18H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="16" cy="10" r="2" fill="white"/>
+              <defs>
+                <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6c5ce7"/>
+                  <stop offset="1" stop-color="#a29bfe"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-brand">H-ESDM<span class="logo-plus">+</span></span>
+            <span class="logo-tagline">v3.0 Enterprise</span>
+          </div>
+        </div>
+        <nav class="header-nav" aria-label="Primary navigation">
+          <a href="#pipeline" class="nav-link">Pipeline</a>
+          <a href="#docs" class="nav-link">Docs</a>
+          <span class="nav-badge">PAL-ISADE Compliant</span>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+        <a href="#pipeline" class="mobile-nav-link">Pipeline</a>
+        <a href="#docs" class="mobile-nav-link">Docs</a>
+        <span class="nav-badge">PAL-ISADE Compliant</span>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span>Zero-Hallucination · Triple-Validation · Regulatory-Ready</span>
+        </div>
+        <h1 id="hero-heading" class="hero-title">
+          Enterprise HEOR<br/>
+          <em>Evidence Synthesis</em><br/>
+          &amp; Decision Engine
+        </h1>
+        <p class="hero-sub">
+          Conduct rigorous systematic literature reviews, execute layout-aware Deep Learning ETL pipelines,
+          orchestrate vector/relational databases, and build regulatory-ready HEOR models — competing
+          directly with DistillerSR, Covidence, and Nested Knowledge.
+        </p>
+        <div class="hero-agents" role="list" aria-label="Sub-agent pipeline stages">
+          <div class="agent-chip" role="listitem">
+            <span class="agent-num">01</span>
+            <span class="agent-label">ETL Ingestion</span>
+          </div>
+          <div class="agent-chip" role="listitem">
+            <span class="agent-num">02</span>
+            <span class="agent-label">PICO Audit</span>
+          </div>
+          <div class="agent-chip" role="listitem">
+            <span class="agent-num">03</span>
+            <span class="agent-label">Meta-Analysis</span>
+          </div>
+          <div class="agent-chip" role="listitem">
+            <span class="agent-num">04</span>
+            <span class="agent-label">HEOR Model</span>
+          </div>
+          <div class="agent-chip" role="listitem">
+            <span class="agent-num">05</span>
+            <span class="agent-label">Compliance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Pipeline Form -->
+    <main id="pipeline" class="pipeline-section" aria-labelledby="pipeline-heading">
+      <div class="pipeline-inner">
+        <div class="section-header">
+          <h2 id="pipeline-heading" class="section-title">Initiate Pipeline</h2>
+          <p class="section-sub">Complete all required fields to launch the full five-agent sequential workflow.</p>
+        </div>
+
+        <form id="hesdmForm" novalidate aria-label="H-ESDM+ pipeline configuration form">
+
+          <!-- ── PICO ── -->
+          <fieldset class="form-card" id="card-pico">
+            <legend class="card-legend">
+              <span class="legend-icon" aria-hidden="true">◈</span>
+              PICO Framework Parameters
+              <span class="required-label">required</span>
+            </legend>
+
+            <div class="field-grid">
+              <div class="field field--full">
+                <label class="field-label" for="population">
+                  P — Population / Indication <span class="req" aria-label="required">*</span>
+                </label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="population"
+                  name="population"
+                  required
+                  aria-required="true"
+                  autocomplete="off"
+                  placeholder="e.g. Adults with treatment-resistant major depressive disorder (tr-MDD), age ≥18"
+                />
+                <span class="field-error" id="population-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="field-label" for="intervention">
+                  I — Intervention <span class="req" aria-label="required">*</span>
+                </label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="intervention"
+                  name="intervention"
+                  required
+                  aria-required="true"
+                  autocomplete="off"
+                  placeholder="e.g. Esketamine intranasal 56mg / 84mg (SPRAVATO)"
+                />
+                <span class="field-error" id="intervention-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="field-label" for="comparator">
+                  C — Comparator(s) <span class="req" aria-label="required">*</span>
+                </label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="comparator"
+                  name="comparator"
+                  required
+                  aria-required="true"
+                  autocomplete="off"
+                  placeholder="e.g. Standard of care antidepressant monotherapy; placebo"
+                />
+                <span class="field-error" id="comparator-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="field-label" for="outcome_primary">
+                  O — Primary Outcome(s) <span class="req" aria-label="required">*</span>
+                </label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="outcome_primary"
+                  name="outcome_primary"
+                  required
+                  aria-required="true"
+                  autocomplete="off"
+                  placeholder="e.g. Change in MADRS total score at week 4; remission rate; time to response"
+                />
+                <span class="field-error" id="outcome_primary-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="field field--full">
+                <label class="field-label" for="outcome_secondary">
+                  O — Secondary / Safety Outcomes
+                </label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="outcome_secondary"
+                  name="outcome_secondary"
+                  autocomplete="off"
+                  placeholder="e.g. HAM-A, CGI-S, treatment-emergent adverse events (TEAEs), dissociation (CADSS)"
+                />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="time_horizon">Time Horizon</label>
+                <div class="select-wrap">
+                  <select class="field-select" id="time_horizon" name="time_horizon">
+                    <option value="">Select…</option>
+                    <option value="short">Short-term (≤1 year)</option>
+                    <option value="medium">Medium-term (1–5 years)</option>
+                    <option value="long">Long-term (5–10 years)</option>
+                    <option value="lifetime">Lifetime</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="study_design">Study Design Filter</label>
+                <div class="select-wrap">
+                  <select class="field-select" id="study_design" name="study_design">
+                    <option value="all">All designs</option>
+                    <option value="rct">RCT only</option>
+                    <option value="rct_obs">RCT + Observational</option>
+                    <option value="obs">Observational only</option>
+                    <option value="phase3">Phase III/IV trials</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field field--full">
+                <label class="field-label" for="pico_notes">Additional PICO Notes / Subgroup Stratifications</label>
+                <textarea
+                  class="field-textarea"
+                  id="pico_notes"
+                  name="pico_notes"
+                  rows="3"
+                  placeholder="e.g. Stratify by prior treatment failures (≥2 vs ≥3); exclude bipolar disorder; include only FDA-registered trials"
+                ></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ── HTA Agency ── -->
+          <fieldset class="form-card" id="card-hta">
+            <legend class="card-legend">
+              <span class="legend-icon" aria-hidden="true">◈</span>
+              Target HTA / Regulatory Agency
+              <span class="required-label">required</span>
+            </legend>
+
+            <div
+              class="hta-grid"
+              id="htaGrid"
+              role="group"
+              aria-label="Select target HTA agencies"
+              aria-required="true"
+            >
+              <button type="button" class="hta-btn" data-value="NICE" aria-pressed="false">
+                <span class="hta-name">NICE</span>
+                <span class="hta-country">United Kingdom</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="CADTH" aria-pressed="false">
+                <span class="hta-name">CADTH</span>
+                <span class="hta-country">Canada</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="PBAC" aria-pressed="false">
+                <span class="hta-name">PBAC</span>
+                <span class="hta-country">Australia</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="IQWiG" aria-pressed="false">
+                <span class="hta-name">IQWiG</span>
+                <span class="hta-country">Germany</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="ICER" aria-pressed="false">
+                <span class="hta-name">ICER</span>
+                <span class="hta-country">United States</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="HAS" aria-pressed="false">
+                <span class="hta-name">HAS</span>
+                <span class="hta-country">France</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="AIFA" aria-pressed="false">
+                <span class="hta-name">AIFA</span>
+                <span class="hta-country">Italy</span>
+              </button>
+              <button type="button" class="hta-btn" data-value="Multi-HTA" aria-pressed="false">
+                <span class="hta-name">Multi-HTA</span>
+                <span class="hta-country">Global Submission</span>
+              </button>
+            </div>
+            <span class="field-error" id="hta-error" role="alert" aria-live="polite"></span>
+
+            <div class="field-grid" style="margin-top: 1.5rem;">
+              <div class="field">
+                <label class="field-label" for="currency">Currency</label>
+                <div class="select-wrap">
+                  <select class="field-select" id="currency" name="currency">
+                    <option value="GBP">GBP (£)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="CAD">CAD ($)</option>
+                    <option value="AUD">AUD ($)</option>
+                    <option value="INR">INR (₹)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="price_year">Price Year</label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="price_year"
+                  name="price_year"
+                  placeholder="e.g. 2024"
+                  maxlength="4"
+                  pattern="\d{4}"
+                />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="disc_cost">Discount Rate (Costs)</label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="disc_cost"
+                  name="disc_cost"
+                  placeholder="e.g. 3.5%"
+                />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="disc_outcomes">Discount Rate (Outcomes)</label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="disc_outcomes"
+                  name="disc_outcomes"
+                  placeholder="e.g. 3.5%"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ── HEOR Model ── -->
+          <fieldset class="form-card" id="card-model">
+            <legend class="card-legend">
+              <span class="legend-icon" aria-hidden="true">◈</span>
+              HEOR Model Architecture
+            </legend>
+
+            <div
+              class="model-grid"
+              id="modelGrid"
+              role="group"
+              aria-label="Select HEOR model type"
+            >
+              <button type="button" class="model-card selected" data-value="Markov" aria-pressed="true">
+                <span class="model-icon" aria-hidden="true">⟳</span>
+                <span class="model-name">Markov State-Transition</span>
+                <span class="model-desc">Chronic disease · repeated events · cyclical health states</span>
+              </button>
+              <button type="button" class="model-card" data-value="Decision Tree" aria-pressed="false">
+                <span class="model-icon" aria-hidden="true">⤴</span>
+                <span class="model-name">Decision Tree</span>
+                <span class="model-desc">Acute conditions · short time horizons · binary outcomes</span>
+              </button>
+              <button type="button" class="model-card" data-value="Partitioned Survival" aria-pressed="false">
+                <span class="model-icon" aria-hidden="true">∫</span>
+                <span class="model-name">Partitioned Survival</span>
+                <span class="model-desc">Oncology · time-to-event endpoints · PFS/OS curves</span>
+              </button>
+              <button type="button" class="model-card" data-value="DES" aria-pressed="false">
+                <span class="model-icon" aria-hidden="true">⊛</span>
+                <span class="model-name">Discrete Event Simulation</span>
+                <span class="model-desc">Individual heterogeneity · complex patient pathways</span>
+              </button>
+            </div>
+
+            <div class="field-grid" style="margin-top: 1.5rem;">
+              <div class="field">
+                <label class="field-label" for="wtp">WTP Threshold (per QALY)</label>
+                <input
+                  class="field-input"
+                  type="text"
+                  id="wtp"
+                  name="wtp"
+                  placeholder="e.g. £30,000 (NICE standard)"
+                />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="cycle_length">Cycle Length</label>
+                <div class="select-wrap">
+                  <select class="field-select" id="cycle_length" name="cycle_length">
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="annually">Annually</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field field--full">
+                <label class="field-label" for="payer">Payer Perspective</label>
+                <div class="select-wrap">
+                  <select class="field-select" id="payer" name="payer">
+                    <option value="nhs">NHS / Public payer</option>
+                    <option value="private">Private insurer</option>
+                    <option value="societal">Societal (all costs including productivity)</option>
+                    <option value="combined">Healthcare system + productivity</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ── Evidence Sources ── -->
+          <fieldset class="form-card" id="card-evidence">
+            <legend class="card-legend">
+              <span class="legend-icon" aria-hidden="true">◈</span>
+              Evidence Ingestion — DOIs &amp; PDF Upload
+            </legend>
+
+            <div class="doi-row">
+              <label class="field-label visually-hidden" for="doiInput">DOI or PubMed URL</label>
+              <input
+                class="field-input"
+                type="text"
+                id="doiInput"
+                placeholder="Paste DOI or PubMed URL (e.g. 10.1056/NEJMoa1804763)"
+                autocomplete="off"
+              />
+              <button type="button" class="add-btn" id="addDoiBtn" aria-label="Add DOI to list">
+                + Add
+              </button>
+            </div>
+            <ul class="doi-list" id="doiList" aria-label="Added DOIs" aria-live="polite"></ul>
+
+            <div class="upload-zone" id="uploadZone" role="but
